@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Swidan | Backend Developer</title>
+  <meta name="description" content="Backend developer specializing in Laravel, PHP, and Spring Boot. Building secure and scalable backend systems.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#home" class="logo">Ahmed<span>Swidan</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
+      <ul id="navMenu" class="nav-menu">
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="container hero-grid">
+        <div class="fade-in-up">
+          <p class="kicker">Backend Engineer</p>
+          <h1>Building calm, reliable systems for growing products.</h1>
+          <p class="lead">I design APIs and backend architectures with Laravel, PHP, and Spring Boot — focused on performance, security, and maintainability.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">See Projects</a>
+            <a href="#contact" class="btn btn-ghost">Let’s Talk</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>25+</strong><span>APIs delivered</span></div>
+            <div><strong>4+</strong><span>Years experience</span></div>
+            <div><strong>99.9%</strong><span>Availability target</span></div>
+          </div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Swidan | Backend Developer</title>
@@ -68,8 +104,29 @@
         <div class="scroll-indicator" aria-hidden="true">
             <span></span>
         </div>
+        <aside class="hero-card fade-in-up">
+          <h3>Core Focus</h3>
+          <ul>
+            <li>REST & GraphQL API design</li>
+            <li>Database optimization</li>
+            <li>Auth, permissions & security</li>
+            <li>Queue-based async workflows</li>
+          </ul>
+        </aside>
+      </div>
     </section>
 
+    <section id="about" class="section">
+      <div class="container split">
+        <div class="fade-in-up">
+          <h2>About Me</h2>
+          <p>I’m Ahmed, a backend developer who enjoys turning complex product requirements into simple, maintainable services.</p>
+          <p>I care about architecture decisions, monitoring, performance tuning, and clean code that teams can build on confidently.</p>
+        </div>
+        <div class="cards fade-in-up">
+          <article class="info-card"><h3>Architecture First</h3><p>Services built with clear boundaries and scalable foundations.</p></article>
+          <article class="info-card"><h3>Performance Aware</h3><p>Efficient queries, caching strategies, and reliable response times.</p></article>
+          <article class="info-card"><h3>Security Mindset</h3><p>Safe authentication, authorization, and robust validation layers.</p></article>
 
     <section id="about" class="about">
         <div class="container">
@@ -107,8 +164,28 @@
                 </div>
             </div>
         </div>
+      </div>
     </section>
 
+    <section id="projects" class="section alt">
+      <div class="container">
+        <h2 class="fade-in-up">Selected Projects</h2>
+        <div class="project-grid">
+          <article class="project fade-in-up">
+            <h3>E-Commerce API Platform</h3>
+            <p>Vendor-based commerce backend with payments, inventory sync, and notifications.</p>
+            <div class="tags"><span>Laravel</span><span>MySQL</span><span>Redis</span></div>
+          </article>
+          <article class="project fade-in-up">
+            <h3>Booking Management System</h3>
+            <p>Reservation workflows with rules engine, calendar sync, and async messaging.</p>
+            <div class="tags"><span>Spring Boot</span><span>MongoDB</span><span>RabbitMQ</span></div>
+          </article>
+          <article class="project fade-in-up">
+            <h3>CMS API</h3>
+            <p>Multi-language content APIs with media pipeline and role-based access control.</p>
+            <div class="tags"><span>PHP</span><span>Laravel</span><span>AWS S3</span></div>
+          </article>
 
     <section id="projects" class="projects">
         <div class="container">
@@ -187,8 +264,31 @@
                 </article>
             </div>
         </div>
+      </div>
     </section>
 
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="fade-in-up">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card fade-in-up">
+            <h3>Backend</h3>
+            <div class="skill"><span>PHP</span><div class="bar"><i data-progress="95"></i></div></div>
+            <div class="skill"><span>Laravel</span><div class="bar"><i data-progress="90"></i></div></div>
+            <div class="skill"><span>Spring Boot</span><div class="bar"><i data-progress="88"></i></div></div>
+          </div>
+          <div class="skill-card fade-in-up">
+            <h3>Data</h3>
+            <div class="skill"><span>MySQL</span><div class="bar"><i data-progress="92"></i></div></div>
+            <div class="skill"><span>PostgreSQL</span><div class="bar"><i data-progress="87"></i></div></div>
+            <div class="skill"><span>Redis</span><div class="bar"><i data-progress="85"></i></div></div>
+          </div>
+          <div class="skill-card fade-in-up">
+            <h3>Tools</h3>
+            <div class="skill"><span>Docker</span><div class="bar"><i data-progress="78"></i></div></div>
+            <div class="skill"><span>Git</span><div class="bar"><i data-progress="88"></i></div></div>
+            <div class="skill"><span>JavaScript</span><div class="bar"><i data-progress="82"></i></div></div>
+          </div>
 
     <section id="skills" class="skills">
         <div class="container">
@@ -234,8 +334,19 @@
                 <div class="tech-icon"><div class="icon-glow"></div><span>AWS</span></div>
             </div>
         </div>
+      </div>
     </section>
 
+    <section id="contact" class="section alt">
+      <div class="container split">
+        <div class="fade-in-up">
+          <h2>Contact</h2>
+          <p>If you need a backend engineer for a product or team, feel free to reach out.</p>
+          <ul class="contact-list">
+            <li><a href="mailto:ahmedswidan404@gmail.com">ahmedswidan404@gmail.com</a></li>
+            <li><a href="tel:+201032992006">+20 103 299 2006</a></li>
+            <li>Cairo, Egypt</li>
+          </ul>
 
     <section id="contact" class="contact">
         <div class="container">
@@ -282,16 +393,24 @@
                 <a href="mailto:ahmedswidan404@gmail.com" class="social-link" aria-label="Email">Email</a>
             </div>
         </div>
+        <form id="contactForm" class="contact-form fade-in-up" novalidate>
+          <label>Name<input type="text" name="name" required minlength="2"></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Subject<input type="text" name="subject" required minlength="4"></label>
+          <label>Message<textarea name="message" rows="5" required minlength="20"></textarea></label>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
+  </main>
 
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Ahmed Swidan — Crafted with clean code.</p>
+    </div>
+  </footer>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Ahmed Swidan. All rights reserved.</p>
-            <p class="footer-tagline">Built with passion and precision</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
