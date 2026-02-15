@@ -37,6 +37,7 @@ window.addEventListener('scroll', () => {
       current = section.id
     }
   }
+}, { threshold: 0.14 })
 
   for (const link of menuLinks) {
     link.classList.toggle('active', link.getAttribute('href') === `#${current}`)

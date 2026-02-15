@@ -238,6 +238,7 @@ textarea:focus {
   text-align: center;
   color: var(--muted);
 }
+.social-link:hover { color: var(--color-primary); border-color: var(--color-primary-dark); }
 
 .fade-in-up {
   opacity: 1;
