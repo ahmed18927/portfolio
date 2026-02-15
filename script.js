@@ -1,177 +1,160 @@
-// Smooth scroll for navigation links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault()
-    const target = document.querySelector(this.getAttribute("href"))
-    if (target) {
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      })
+const nav = document.querySelector(".nav")
+const navMenu = document.getElementById("navMenu")
+const menuToggle = document.querySelector(".menu-toggle")
+const sections = document.querySelectorAll("section[id]")
+const navLinks = document.querySelectorAll(".nav-link")
+const contactForm = document.getElementById("contactForm")
+const formStatus = document.getElementById("formStatus")
+
+// Smooth scroll for on-page navigation links
+for (const anchor of document.querySelectorAll('a[href^="#"]')) {
+  anchor.addEventListener("click", (event) => {
+    const href = anchor.getAttribute("href")
+    const target = href ? document.querySelector(href) : null
+    if (!target) return
+
+    event.preventDefault()
+    target.scrollIntoView({ behavior: "smooth", block: "start" })
+
+    if (navMenu?.classList.contains("open")) {
+      navMenu.classList.remove("open")
+      menuToggle?.setAttribute("aria-expanded", "false")
     }
   })
-})
-
-// Intersection Observer for fade-in animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
 }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("open")
+    menuToggle.setAttribute("aria-expanded", String(isOpen))
+  })
+}
+
+// Reveal on scroll
+const observer = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue
       entry.target.classList.add("visible")
 
-      // Animate skill bars when they come into view
       if (entry.target.classList.contains("skills-category")) {
-        const skillBars = entry.target.querySelectorAll(".skill-progress")
-        skillBars.forEach((bar) => {
-          const progress = bar.getAttribute("data-progress")
-          setTimeout(() => {
-            bar.style.width = progress + "%"
-          }, 200)
-        })
+        for (const bar of entry.target.querySelectorAll(".skill-progress")) {
+          const progress = Number(bar.getAttribute("data-progress") || "0")
+          bar.style.width = `${Math.max(0, Math.min(100, progress))}%`
+        }
       }
     }
-  })
-}, observerOptions)
+  },
+  { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+)
 
-// Observe all fade-in-up elements
-document.querySelectorAll(".fade-in-up").forEach((el) => {
-  observer.observe(el)
-})
+for (const item of document.querySelectorAll(".fade-in-up, .fade-in, .skills-category")) {
+  observer.observe(item)
+}
 
-// Observe skills categories for progress bar animation
-document.querySelectorAll(".skills-category").forEach((el) => {
-  observer.observe(el)
-})
-
-// Navbar background on scroll
-const nav = document.querySelector(".nav")
-let lastScroll = 0
-
+// Navbar style + active section
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset
 
-  if (currentScroll > 100) {
-    nav.style.background = "rgba(0, 0, 0, 0.95)"
-    nav.style.boxShadow = "0 4px 20px rgba(220, 38, 38, 0.1)"
-  } else {
-    nav.style.background = "rgba(0, 0, 0, 0.8)"
-    nav.style.boxShadow = "none"
+  if (nav) {
+    if (currentScroll > 90) {
+      nav.style.background = "rgba(0, 0, 0, 0.92)"
+      nav.style.boxShadow = "0 4px 18px rgba(220, 38, 38, 0.14)"
+    } else {
+      nav.style.background = "rgba(0, 0, 0, 0.75)"
+      nav.style.boxShadow = "none"
+    }
   }
 
-  lastScroll = currentScroll
+  let currentSection = ""
+  for (const section of sections) {
+    if (currentScroll >= section.offsetTop - 220) {
+      currentSection = section.getAttribute("id") || ""
+    }
+  }
+
+  for (const link of navLinks) {
+    const isActive = link.getAttribute("href") === `#${currentSection}`
+    link.classList.toggle("active", isActive)
+  }
 })
 
-// Contact form submission
-const contactForm = document.getElementById("contactForm")
-
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault()
-
-  const formData = new FormData(contactForm)
-  const data = Object.fromEntries(formData)
-
-  // Simulate form submission
-  console.log("Form submitted:", data)
-
-  // Show success message
-  const submitBtn = contactForm.querySelector(".btn-submit")
-  const originalText = submitBtn.innerHTML
-
-  submitBtn.innerHTML = "<span>Message Sent! ✓</span>"
-  submitBtn.style.background = "#16a34a"
-
-  setTimeout(() => {
-    submitBtn.innerHTML = originalText
-    submitBtn.style.background = ""
-    contactForm.reset()
-  }, 3000)
-})
-
-// Add parallax effect to hero orbs
-window.addEventListener("mousemove", (e) => {
-  const orbs = document.querySelectorAll(".glow-orb")
-  const x = e.clientX / window.innerWidth
-  const y = e.clientY / window.innerHeight
-
-  orbs.forEach((orb, index) => {
-    const speed = (index + 1) * 20
-    const xMove = (x - 0.5) * speed
-    const yMove = (y - 0.5) * speed
-
-    orb.style.transform = `translate(${xMove}px, ${yMove}px)`
-  })
-})
-
-// Add typing effect to hero tagline (optional enhancement)
+// Hero tagline typing effect
 const tagline = document.querySelector(".hero-tagline")
-const taglineText = tagline.textContent
-tagline.textContent = ""
+if (tagline) {
+  const taglineText = tagline.textContent || ""
+  tagline.textContent = ""
+  let charIndex = 0
 
-let charIndex = 0
-function typeWriter() {
-  if (charIndex < taglineText.length) {
+  const typeWriter = () => {
+    if (charIndex >= taglineText.length) return
     tagline.textContent += taglineText.charAt(charIndex)
-    charIndex++
-    setTimeout(typeWriter, 50)
+    charIndex += 1
+    setTimeout(typeWriter, 45)
   }
+
+  window.addEventListener("load", () => {
+    setTimeout(typeWriter, 450)
+  })
 }
 
-// Start typing effect after page load
-window.addEventListener("load", () => {
-  setTimeout(typeWriter, 500)
-})
+// Contact form behavior with mailto fallback
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault()
 
-// Add active state to navigation based on scroll position
-const sections = document.querySelectorAll("section[id]")
-const navLinks = document.querySelectorAll(".nav-link")
-
-window.addEventListener("scroll", () => {
-  let current = ""
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop
-    const sectionHeight = section.clientHeight
-
-    if (window.pageYOffset >= sectionTop - 200) {
-      current = section.getAttribute("id")
+    if (!contactForm.checkValidity()) {
+      formStatus.textContent = "Please complete all fields correctly before submitting."
+      formStatus.className = "form-status error"
+      contactForm.reportValidity()
+      return
     }
-  })
 
-  navLinks.forEach((link) => {
-    link.classList.remove("active")
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active")
+    const formData = new FormData(contactForm)
+    const name = String(formData.get("name") || "")
+    const email = String(formData.get("email") || "")
+    const subject = String(formData.get("subject") || "")
+    const message = String(formData.get("message") || "")
+
+    const mailSubject = encodeURIComponent(`[Portfolio] ${subject}`)
+    const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)
+    const mailtoURL = `mailto:ahmedswidan404@gmail.com?subject=${mailSubject}&body=${mailBody}`
+
+    window.location.href = mailtoURL
+
+    formStatus.textContent = "Great! Your email app should open now with your message pre-filled."
+    formStatus.className = "form-status success"
+
+    const submitBtn = contactForm.querySelector(".btn-submit")
+    if (submitBtn) {
+      submitBtn.setAttribute("disabled", "true")
+      setTimeout(() => submitBtn.removeAttribute("disabled"), 1800)
     }
-  })
-})
 
-// Add cursor glow effect
-const cursor = document.createElement("div")
-cursor.className = "cursor-glow"
-cursor.style.cssText = `
+    setTimeout(() => {
+      contactForm.reset()
+    }, 700)
+  })
+}
+
+// Cursor glow effect (desktop only)
+if (window.innerWidth >= 768) {
+  const cursor = document.createElement("div")
+  cursor.className = "cursor-glow"
+  cursor.style.cssText = `
     position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.3) 0%, transparent 70%);
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.25) 0%, transparent 72%);
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s ease;
-    display: none;
-`
-document.body.appendChild(cursor)
+    transform: translate(-50%, -50%);
+  `
+  document.body.appendChild(cursor)
 
-document.addEventListener("mousemove", (e) => {
-  cursor.style.display = "block"
-  cursor.style.left = e.clientX - 10 + "px"
-  cursor.style.top = e.clientY - 10 + "px"
-})
-
-// Hide cursor glow on mobile
-if (window.innerWidth < 768) {
-  cursor.style.display = "none"
+  document.addEventListener("mousemove", (event) => {
+    cursor.style.left = `${event.clientX}px`
+    cursor.style.top = `${event.clientY}px`
+  })
 }

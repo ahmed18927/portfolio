@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Swidan | Backend Developer</title>
+    <meta name="description" content="Backend developer specializing in Laravel, PHP, and Spring Boot. I build secure APIs, scalable systems, and production-ready backend architectures.">
+    <meta name="keywords" content="Ahmed Swidan, Backend Developer, Laravel, PHP, Spring Boot, API Development, Microservices">
+    <meta name="author" content="Ahmed Swidan">
+    <meta property="og:title" content="Ahmed Swidan | Backend Developer">
+    <meta property="og:description" content="I build secure, scalable backend systems with Laravel, PHP, and Spring Boot.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ahmed Swidan | Backend Developer">
+    <meta name="twitter:description" content="Secure APIs, clean architecture, and scalable backend engineering.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <nav class="nav">
         <div class="nav-container">
-            <a href="#home" class="logo">AS</a>
-            <ul class="nav-menu">
+            <a href="#home" class="logo" aria-label="Ahmed Swidan home">AS</a>
+            <button class="menu-toggle" aria-expanded="false" aria-controls="navMenu" aria-label="Toggle navigation menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -33,15 +43,29 @@
                 <h1 class="hero-name">Ahmed Swidan</h1>
                 <p class="hero-tagline">Backend Developer | Laravel | PHP | Java Spring Boot</p>
                 <p class="hero-description">
-                    Crafting robust, scalable backend solutions with clean architecture and modern technologies
+                    I design and ship backend systems that are secure, fast, and easy to evolve—so products can scale without technical debt.
                 </p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">View Projects</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
+                <div class="hero-stats fade-in-up">
+                    <div class="stat">
+                        <strong>4+</strong>
+                        <span>Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <strong>25+</strong>
+                        <span>APIs Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <strong>99.9%</strong>
+                        <span>Target Uptime</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div class="scroll-indicator" aria-hidden="true">
             <span></span>
         </div>
     </section>
@@ -53,39 +77,32 @@
             <div class="about-content">
                 <div class="about-text fade-in-up">
                     <p class="about-intro">
-                        I'm a passionate backend developer specializing in building high-performance, 
-                        scalable web applications and RESTful APIs. With expertise in modern frameworks 
-                        and a deep understanding of software architecture, I transform complex business 
-                        requirements into elegant technical solutions.
+                        I'm a backend engineer focused on building resilient APIs and distributed systems for real business workflows.
                     </p>
                     <p>
-                        My journey in software development has equipped me with a comprehensive skill set 
-                        spanning multiple technologies. I excel at designing database schemas, implementing 
-                        authentication systems, optimizing query performance, and building microservices 
-                        architectures. I'm committed to writing clean, maintainable code that follows 
-                        industry best practices and SOLID principles.
+                        I specialize in turning complex requirements into clean, maintainable services. My process emphasizes domain modeling,
+                        robust validation, and observability from day one. I enjoy owning the backend lifecycle—from architecture and implementation
+                        to deployment, monitoring, and iterative optimization.
                     </p>
                     <p>
-                        When I'm not coding, I'm exploring new technologies, contributing to open-source 
-                        projects, and staying updated with the latest trends in backend development and 
-                        cloud infrastructure.
+                        Outside coding, I continuously sharpen my engineering craft through open-source learning, architecture reading, and benchmarking modern backend patterns.
                     </p>
                 </div>
                 <div class="about-highlights fade-in-up">
                     <div class="highlight-card">
                         <div class="highlight-icon">💻</div>
-                        <h3>Backend Expert</h3>
-                        <p>Specialized in Laravel, PHP, and Java Spring Boot frameworks</p>
+                        <h3>Backend Specialist</h3>
+                        <p>Laravel, PHP, and Spring Boot with production-first engineering standards.</p>
                     </div>
                     <div class="highlight-card">
                         <div class="highlight-icon">🚀</div>
-                        <h3>API Development</h3>
-                        <p>RESTful APIs, GraphQL, and microservices architecture</p>
+                        <h3>Scalable APIs</h3>
+                        <p>REST/GraphQL services designed for reliability, speed, and long-term maintainability.</p>
                     </div>
                     <div class="highlight-card">
                         <div class="highlight-icon">🔒</div>
-                        <h3>Security First</h3>
-                        <p>Authentication, authorization, and data protection</p>
+                        <h3>Security by Design</h3>
+                        <p>Authentication, authorization, secure data handling, and best-practice hardening.</p>
                     </div>
                 </div>
             </div>
@@ -97,15 +114,15 @@
         <div class="container">
             <h2 class="section-title fade-in-up">Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card fade-in-up">
+                <article class="project-card fade-in-up">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="#contact" class="project-link">Discuss Similar Project →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>E-Commerce API Platform</h3>
-                        <p>Comprehensive RESTful API for a multi-vendor e-commerce platform built with Laravel. Features include payment integration, inventory management, and real-time notifications.</p>
+                        <p>Multi-vendor commerce backend with modular services, payment integrations, stock synchronization, and queue-driven notifications.</p>
                         <div class="project-tags">
                             <span class="tag">Laravel</span>
                             <span class="tag">MySQL</span>
@@ -113,53 +130,17 @@
                             <span class="tag">Stripe</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card fade-in-up">
+                <article class="project-card fade-in-up">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="#" class="project-link">View Details →</a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Enterprise Resource Planning System</h3>
-                        <p>Scalable ERP solution using Java Spring Boot with microservices architecture. Handles HR, inventory, finance, and reporting modules with role-based access control.</p>
-                        <div class="project-tags">
-                            <span class="tag">Spring Boot</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Docker</span>
-                            <span class="tag">JWT</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in-up">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">View Details →</a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Real-Time Chat Application</h3>
-                        <p>High-performance chat system with WebSocket support, message encryption, and file sharing capabilities. Built with Laravel and Redis for real-time communication.</p>
-                        <div class="project-tags">
-                            <span class="tag">Laravel</span>
-                            <span class="tag">WebSocket</span>
-                            <span class="tag">Redis</span>
-                            <span class="tag">Vue.js</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in-up">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="#contact" class="project-link">Discuss Similar Project →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>Content Management System</h3>
-                        <p>Flexible CMS with multi-language support, media management, and SEO optimization. Features a powerful admin panel and RESTful API for headless architecture.</p>
+                        <p>Flexible CMS with localization, media pipelines, role-based access, and SEO-first content workflows for editorial teams.</p>
                         <div class="project-tags">
                             <span class="tag">PHP</span>
                             <span class="tag">Laravel</span>
@@ -167,17 +148,17 @@
                             <span class="tag">AWS S3</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card fade-in-up">
+                <article class="project-card fade-in-up">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="#contact" class="project-link">Discuss Similar Project →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>Booking Management System</h3>
-                        <p>Comprehensive booking platform for hotels and services with calendar integration, payment processing, and automated email notifications using Spring Boot.</p>
+                        <p>Spring Boot platform for bookings with calendar integrations, rule-based availability, and asynchronous notification flows.</p>
                         <div class="project-tags">
                             <span class="tag">Spring Boot</span>
                             <span class="tag">MongoDB</span>
@@ -185,17 +166,17 @@
                             <span class="tag">REST API</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="project-card fade-in-up">
+                <article class="project-card fade-in-up">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="#" class="project-link">View Details →</a>
+                            <a href="#contact" class="project-link">Discuss Similar Project →</a>
                         </div>
                     </div>
                     <div class="project-content">
                         <h3>Analytics Dashboard API</h3>
-                        <p>High-performance analytics API processing millions of events daily. Features data aggregation, real-time metrics, and comprehensive reporting endpoints.</p>
+                        <p>Event-processing backend with time-series aggregation, cache strategy, and metrics endpoints for near real-time reporting.</p>
                         <div class="project-tags">
                             <span class="tag">Laravel</span>
                             <span class="tag">Elasticsearch</span>
@@ -203,7 +184,7 @@
                             <span class="tag">GraphQL</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -215,174 +196,42 @@
             <div class="skills-content">
                 <div class="skills-category fade-in-up">
                     <h3>Backend Technologies</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">PHP</span>
-                            <span class="skill-percentage">95%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="95"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Laravel</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Java</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="85"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Spring Boot</span>
-                            <span class="skill-percentage">88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="88"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">PHP</span><span class="skill-percentage">95%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="95"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Laravel</span><span class="skill-percentage">90%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Java</span><span class="skill-percentage">85%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Spring Boot</span><span class="skill-percentage">88%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div></div>
                 </div>
 
                 <div class="skills-category fade-in-up">
                     <h3>Databases & Caching</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">MySQL</span>
-                            <span class="skill-percentage">92%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="92"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">PostgreSQL</span>
-                            <span class="skill-percentage">87%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="87"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">MongoDB</span>
-                            <span class="skill-percentage">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="80"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Redis</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="85"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MySQL</span><span class="skill-percentage">92%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="92"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">PostgreSQL</span><span class="skill-percentage">87%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="87"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">MongoDB</span><span class="skill-percentage">80%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="80"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Redis</span><span class="skill-percentage">85%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="85"></div></div></div>
                 </div>
 
                 <div class="skills-category fade-in-up">
                     <h3>Frontend & Tools</h3>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-percentage">82%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="82"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">HTML & CSS</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="90"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Git</span>
-                            <span class="skill-percentage">88%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="88"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Docker</span>
-                            <span class="skill-percentage">78%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="78"></div>
-                        </div>
-                    </div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">JavaScript</span><span class="skill-percentage">82%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="82"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">HTML & CSS</span><span class="skill-percentage">90%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="90"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Git</span><span class="skill-percentage">88%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="88"></div></div></div>
+                    <div class="skill-item"><div class="skill-info"><span class="skill-name">Docker</span><span class="skill-percentage">78%</span></div><div class="skill-bar"><div class="skill-progress" data-progress="78"></div></div></div>
                 </div>
             </div>
 
             <div class="tech-icons fade-in-up">
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>PHP</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>Laravel</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>Java</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>Spring Boot</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>MySQL</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>PostgreSQL</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>MongoDB</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>Redis</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>REST API</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>GraphQL</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>Docker</span>
-                </div>
-                <div class="tech-icon">
-                    <div class="icon-glow"></div>
-                    <span>AWS</span>
-                </div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>PHP</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>Laravel</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>Java</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>Spring Boot</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>MySQL</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>PostgreSQL</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>MongoDB</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>Redis</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>REST API</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>GraphQL</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>Docker</span></div>
+                <div class="tech-icon"><div class="icon-glow"></div><span>AWS</span></div>
             </div>
         </div>
     </section>
@@ -392,71 +241,45 @@
         <div class="container">
             <h2 class="section-title fade-in-up">Get In Touch</h2>
             <p class="contact-intro fade-in-up">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+                I'm available for backend development roles, freelance projects, and architecture consulting.
             </p>
             <div class="contact-content">
-                <form class="contact-form fade-in-up" id="contactForm">
+                <form class="contact-form fade-in-up" id="contactForm" novalidate>
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required minlength="2">
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project discussion" required minlength="4">
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="6" placeholder="Your Message" required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell me about your project" required minlength="20"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-submit">
                         <span>Send Message</span>
                         <span class="btn-arrow">→</span>
                     </button>
+                    <p class="form-note">Submitting opens your email app with a pre-filled message.</p>
+                    <p id="formStatus" class="form-status" aria-live="polite"></p>
                 </form>
 
                 <div class="contact-info fade-in-up">
-                    <div class="info-card">
-                        <div class="info-icon">📧</div>
-                        <h3>Email</h3>
-                        <p>ahmedswidan404@gmail.com</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">📱</div>
-                        <h3>Phone</h3>
-                        <p>+201032992006</p>
-                    </div>
-                    <div class="info-card">
-                        <div class="info-icon">📍</div>
-                        <h3>Location</h3>
-                        <p>Cairo, Egypt</p>
-                    </div>
+                    <div class="info-card"><div class="info-icon">📧</div><h3>Email</h3><p><a href="mailto:ahmedswidan404@gmail.com">ahmedswidan404@gmail.com</a></p></div>
+                    <div class="info-card"><div class="info-icon">📱</div><h3>Phone</h3><p><a href="tel:+201032992006">+20 103 299 2006</a></p></div>
+                    <div class="info-card"><div class="info-icon">📍</div><h3>Location</h3><p>Cairo, Egypt</p></div>
                 </div>
             </div>
 
             <div class="social-links fade-in-up">
-                <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                    </svg>
-                </a>
-                <a href="mailto:ahmed.swidan@example.com" class="social-link" aria-label="Email">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
+                <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+                <a href="mailto:ahmedswidan404@gmail.com" class="social-link" aria-label="Email">Email</a>
             </div>
         </div>
     </section>
